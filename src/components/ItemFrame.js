@@ -4,11 +4,18 @@ import { ItemGrid } from './ItemGrid'
 import { baseContext } from './Base'
 
 
-export default function ItemFrame({ itemList,updaterFunction }) {
+export default function ItemFrame({ itemList}) {
   // the first item in the list is the currently equipped item
-  const {equippedItems, setEquippedItems} = useContext(baseContext)
   const [equippedItem,setEquippedItem] = useState(itemList[0])
-  let handleHover = true;
+  const [isHovering,setHovering] = useState(false)
+  const [isHoveringBox,setHoveringBox] = useState(false)
+
+  function handleMouseEnter(){
+    setHovering(true)
+  }
+  function handleMouseLeave(){
+    setHovering(false)
+  }
 
   const getRarity = (i) => {
     switch (i.rarity) {
@@ -32,23 +39,22 @@ export default function ItemFrame({ itemList,updaterFunction }) {
     marginBottom: "30px",
     marginLeft: "10px",
     backgroundColor: itemRarity,
+    
   }
 
-  useEffect( () => {
-    updaterFunction(equippedItem.id,equippedItem.light_level,equippedItem.armor_slot)
-    const newEquippedItems = {...equippedItems, [equippedItem.armor_slot]:{"id": equippedItem.id, "light_level": equippedItem.light_level}}
-    setEquippedItems(newEquippedItems)
-  },[equippedItem])
+
   return (
 
     <div >
       <div className = "itemContainer">
-        <div style={frameStyle}>
+        <div onMouseEnter = {handleMouseEnter}  style={frameStyle}>
           <h2 className = "itemWriting">{equippedItem.name}</h2>
           <h2 className = "itemWriting">{equippedItem.light_level}</h2>
           <h2 className = "itemWriting">{equippedItem.hasOwnProperty("slot")? equippedItem.slot : equippedItem.armor_slot}</h2>
       </div>
-        {/*<ItemGrid/>*/}
+        {isHovering &&(
+          <ItemGrid hoverFunction = {handleMouseLeave} itemsList = {itemList}/>
+        )}
       </div>
       
 

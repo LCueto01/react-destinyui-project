@@ -115,7 +115,7 @@ export const armsArmorData = [
         "name": "Sonsing",
         "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "armor_slot": "arms",
-        "rarity": "rare",
+        "rarity": "exotic",
         "mobility": 86,
         "resilience": 40,
         "recovery": 28,
