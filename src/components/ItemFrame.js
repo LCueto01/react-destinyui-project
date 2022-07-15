@@ -42,7 +42,6 @@ export default function ItemFrame({ itemList}) {
     
   }
   useEffect(()=>{
-    console.log(itemList)
     setEquippedItem(itemList[0])
   },[itemList])
 

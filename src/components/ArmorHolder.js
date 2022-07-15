@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import ItemFrame from './ItemFrame'
 import { headArmorData, chestArmorData, armsArmorData, legsArmorData, bootsArmorData, classItemsData } from './data'
 
@@ -26,22 +26,29 @@ export default function ArmorHolder({ lightCalculator }) {
 
     function getEquippedItems() {
         let sumLight = 0;
-        const equippedArmour = [headData[0], chestData[0], legsData[0], bootsData[0], classItemData[0]]
+        const equippedArmour = [headData[0], armsData[0]]//,chestData[0]] , legsData[0], bootsData[0], classItemData[0]]
         equippedArmour.forEach(i => {
             sumLight += i.light_level
-            setEquippedItems(armor => armor[i.armor_slot] = i.id)
+            const armorIdCopy = equippedItems
+            armorIdCopy[i.armor_slot] = i.id
+            setEquippedItems(armorIdCopy)
         })
     }
 
     const equipNewItem = (item) => {
+
+        //replaces item and updates ids
         const replaceItem = (foundItem, itemSource) =>{
-            const copy = JSON.parse(JSON.stringify(headData))
+            const copy = JSON.parse(JSON.stringify(itemSource))
             // it only worked if I did this for some reason??
             const matchingItem = copy.find(i => {return i.id == foundItem.id})
             const foundIndex = copy.indexOf(matchingItem)
-            copy[foundIndex] = headData[0]
+            copy[foundIndex] = copy[0]
             copy[0] = foundItem
            
+            const copyArmorIds = {...equippedItems}
+            copyArmorIds[foundItem.armor_slot] = foundItem.id
+            console.log(copyArmorIds)
             return copy
            
         }
@@ -66,6 +73,11 @@ export default function ArmorHolder({ lightCalculator }) {
         }
         
     }
+
+    useEffect(() => {
+        getEquippedItems()
+        console.log(equippedItems)
+    },[])
     return (
         <div className="armorHolder">
             <equipContext.Provider value = {equipNewItem}>
