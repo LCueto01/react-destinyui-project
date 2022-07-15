@@ -64,6 +64,7 @@ export default function ArmorHolder({ lightCalculator }) {
             default:
                 break;
         }
+        
     }
     return (
         <div className="armorHolder">
