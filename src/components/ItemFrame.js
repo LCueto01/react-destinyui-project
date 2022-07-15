@@ -41,7 +41,10 @@ export default function ItemFrame({ itemList}) {
     backgroundColor: itemRarity,
     
   }
-
+  useEffect(()=>{
+    console.log(itemList)
+    setEquippedItem(itemList[0])
+  },[itemList])
 
   return (
 
@@ -53,7 +56,7 @@ export default function ItemFrame({ itemList}) {
           <h2 className = "itemWriting">{equippedItem.hasOwnProperty("slot")? equippedItem.slot : equippedItem.armor_slot}</h2>
       </div>
         {isHovering &&(
-          <ItemGrid hoverFunction = {handleMouseLeave} itemsList = {itemList}/>
+          <ItemGrid hoverFunction ={handleMouseLeave} itemsList = {itemList}/>
         )}
       </div>
       

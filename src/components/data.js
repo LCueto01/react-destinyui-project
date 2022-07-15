@@ -17,13 +17,27 @@ export const headArmorData = [{
     "name": "Sub-Ex",
     "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
     "armor_slot": "head",
-    "rarity": "rare",
+    "rarity": "legendary",
     "mobility": 62,
     "resilience": 54,
     "recovery": 77,
     "strength": 64,
     "discipline": 67
-}]
+},
+{
+    "id": 8,
+    "light_level": 1410,
+    "name": "Toughjoyfax",
+    "description": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
+    "armor_slot": "head",
+    "rarity": "rare",
+    "mobility": 74,
+    "intellect": 51,
+    "resilience": 63,
+    "recovery": 88,
+    "strength": 30,
+    "discipline": 60
+  }]
 
 export const chestArmorData = [{
     "id": 7,
