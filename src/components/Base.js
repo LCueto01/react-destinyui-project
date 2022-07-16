@@ -37,10 +37,10 @@ const Base = () => {
           <CurrenciesHolder></CurrenciesHolder>
           <div className="lightContainer">
             <h1>Light Level</h1>
-            <h1>{(armorLight + weaponLight)/9}</h1>
+            <h1>{parseInt(armorLight/9)}</h1>
           </div>
           <StatHolder />
-          <ArmorHolder/>
+          <ArmorHolder lightSetter = {setArmorLight}/>
         </div>
       </div>
     </div>

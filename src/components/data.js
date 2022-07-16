@@ -37,6 +37,46 @@ export const headArmorData = [{
     "recovery": 88,
     "strength": 30,
     "discipline": 60
+  }, {
+    "id": 11,
+    "light_level": 1485,
+    "name": "Asoka",
+    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.",
+    "armor_slot": "head",
+    "rarity": "exotic",
+    "mobility": 52,
+    "intellect": 80,
+    "resilience": 80,
+    "recovery": 86,
+    "strength": 37,
+    "discipline": 65
+  },
+  {
+    "id": 18,
+    "light_level": 1539,
+    "name": "Temp",
+    "description": "Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
+    "armor_slot": "head",
+    "rarity": "legendary",
+    "mobility": 51,
+    "intellect": 45,
+    "resilience": 98,
+    "recovery": 61,
+    "strength": 21,
+    "discipline": 34
+  },{
+    "id": 19,
+    "light_level": 1524,
+    "name": "Kanlam",
+    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
+    "armor_slot": "head",
+    "rarity": "exotic",
+    "mobility": 31,
+    "intellect": 38,
+    "resilience": 39,
+    "recovery": 18,
+    "strength": 99,
+    "discipline": 58
   }]
 
 export const chestArmorData = [{

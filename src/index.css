@@ -16,7 +16,7 @@ html,body{
     display:flex;
     justify-content: center;
     margin-top: 20px;
-    
+    padding-bottom: 80px; /* adding this here so items dont appear out of screen*/
 }
 
 .armorHolder{
@@ -122,6 +122,8 @@ html,body{
 
 .itemWriting{
     margin: 0;
+    text-align: center;
+    overflow: hidden;
 }
 
 .itemContainer{
@@ -130,10 +132,14 @@ display: flex;
 
 .gridStyle  {
     background-color:lightGrey;
-    width: "280px";
-    height: "300px";
-    position:"absolute";
-
+    display: flex;
+    flex-wrap: wrap;
+    width: 290px;
+    height: 300px;
+    position: fixed;
+    margin-left: 100px;
+    align-content: flex-start;
   }
+
 
 

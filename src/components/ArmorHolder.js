@@ -4,7 +4,7 @@ import { headArmorData, chestArmorData, armsArmorData, legsArmorData, bootsArmor
 
 export const equipContext = React.createContext()
 
-export default function ArmorHolder({ lightCalculator }) {
+export default function ArmorHolder({ lightSetter }) {
 
     //records item ids
     const [equippedItems, setEquippedItems] = useState({
@@ -26,13 +26,14 @@ export default function ArmorHolder({ lightCalculator }) {
 
     function getEquippedItems() {
         let sumLight = 0;
-        const equippedArmour = [headData[0], armsData[0]]//,chestData[0]] , legsData[0], bootsData[0], classItemData[0]]
+        const equippedArmour = [headData[0], armsData[0],chestData[0] , legsData[0], bootsData[0], classItemData[0]]
         equippedArmour.forEach(i => {
             sumLight += i.light_level
             const armorIdCopy = equippedItems
             armorIdCopy[i.armor_slot] = i.id
             setEquippedItems(armorIdCopy)
         })
+        lightSetter(sumLight)
     }
 
     const equipNewItem = (item) => {
@@ -77,20 +78,20 @@ export default function ArmorHolder({ lightCalculator }) {
     useEffect(() => {
         getEquippedItems()
         console.log(equippedItems)
-    },[])
+    },[headData,armsData,chestData,legsData,bootsData,classItemData])
     return (
         <div className="armorHolder">
             <equipContext.Provider value = {equipNewItem}>
                 <ItemFrame itemList={headData} />
                 <ItemFrame itemList={armsData} />
-                {/*
-             <ItemFrame itemList = {armsArmor} updaterFunction = {updaterFunction}/>
-            <ItemFrame itemList = {chestArmor} updaterFunction = {updaterFunction}/>
-            <ItemFrame itemList = {legsArmor} updaterFunction = {updaterFunction}/>
-            <ItemFrame itemList = {bootsArmor} updaterFunction = {updaterFunction}/>
-            <ItemFrame itemList = {classItems}updaterFunction = {updaterFunction}/>
+              
+    
+            <ItemFrame itemList = {chestData} />
+            <ItemFrame itemList = {legsData} />
+            <ItemFrame itemList = {bootsData} />
+            <ItemFrame itemList = {classItemData}/>
 
-            */}
+            
             </equipContext.Provider>
         </div>
     )

@@ -7,7 +7,8 @@ const gridStyle = {
   height: "300px",
   position:"absolute",
   marginLeft:"100px",
-  display:"flex"
+  display:"flex",
+  flex: "1 1 80px",
 }
 const getRarity = (i) => {
   switch (i.rarity) {
