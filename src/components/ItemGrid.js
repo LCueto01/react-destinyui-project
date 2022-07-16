@@ -9,6 +9,20 @@ const gridStyle = {
   marginLeft:"100px",
   display:"flex"
 }
+const getRarity = (i) => {
+  switch (i.rarity) {
+    case "exotic":
+      return "yellow";
+    case "legendary":
+      return "purple";
+    case "rare":
+      return "blue";
+    case "uncommon":
+      return "green";
+    default:
+      return "white"
+  }
+} 
 
 const frameStyle = {
   border: "2px solid white",
@@ -18,6 +32,8 @@ const frameStyle = {
   marginLeft: "5px",
   marginRight: "5px"
 }
+
+
 
 
 

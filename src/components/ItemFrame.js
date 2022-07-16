@@ -1,7 +1,7 @@
 
 import React, { useEffect,useState,useContext } from 'react'
 import { ItemGrid } from './ItemGrid'
-import { baseContext } from './Base'
+import { ChildFrame } from './ChildFrame'
 
 
 export default function ItemFrame({ itemList}) {
@@ -10,6 +10,7 @@ export default function ItemFrame({ itemList}) {
   const [isHovering,setHovering] = useState(false)
   const [isHoveringBox,setHoveringBox] = useState(false)
 
+  const [firstItem, ...rest] = itemList
   function handleMouseEnter(){
     setHovering(true)
   }
@@ -32,6 +33,7 @@ export default function ItemFrame({ itemList}) {
     }
   }
   const itemRarity = getRarity(equippedItem)
+
   const frameStyle = {
     border: "2px solid white",
     width: "90px",
@@ -39,8 +41,19 @@ export default function ItemFrame({ itemList}) {
     marginBottom: "30px",
     marginLeft: "10px",
     backgroundColor: itemRarity,
-    
   }
+
+  const gridStyle = {
+    backgroundColor:"lightGrey",
+    width: "305px",
+    height: "300px",
+    position:"absolute",
+    marginLeft:"100px",
+    display:"flex"
+  }
+  //renders items in grid
+  const renderItems = ( rest.map((gridItem) =>  <ChildFrame key = {gridItem.id} item = {gridItem} frameStyle = {frameStyle} renderRarity = {getRarity}/>))
+
   useEffect(()=>{
     setEquippedItem(itemList[0])
   },[itemList])
@@ -55,7 +68,9 @@ export default function ItemFrame({ itemList}) {
           <h2 className = "itemWriting">{equippedItem.hasOwnProperty("slot")? equippedItem.slot : equippedItem.armor_slot}</h2>
       </div>
         {isHovering &&(
-          <ItemGrid hoverFunction ={handleMouseLeave} itemsList = {itemList}/>
+           <div onMouseLeave = {handleMouseLeave} style = {gridStyle}>
+      {renderItems}
+    </div>
         )}
       </div>
       
