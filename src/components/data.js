@@ -1,7 +1,7 @@
 export const headArmorData = [ {
     "id": 4,
     "light_level": 1498,
-    "name": "Prodder",
+    "name": "Faded",
     "description": "Duis at velit eu est congue elementum.",
     "armor_slot": "head",
     "rarity": "rare",
