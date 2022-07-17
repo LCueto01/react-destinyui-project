@@ -1,23 +1,43 @@
 
-import React, { useEffect,useState,useContext } from 'react'
-import { ItemGrid } from './ItemGrid'
-import { baseContext } from './Base'
+import React, { useEffect, useState, useContext } from 'react'
+import { ChildFrame } from './ChildFrame'
 
 
-export default function ItemFrame({ itemList,updaterFunction }) {
+export default function ItemFrame({ itemList }) {
   // the first item in the list is the currently equipped item
-  const {equippedItems, setEquippedItems} = useContext(baseContext)
-  const [equippedItem,setEquippedItem] = useState(itemList[0])
-  let handleHover = true;
+  const [equippedItem, setEquippedItem] = useState(itemList[0])
+  const [isHovering, setHovering] = useState(false)
+  const [isHoveringBox, setHoveringBox] = useState(false)
+
+  // on item frame hover show grid
+  // on grid leav show grid
+  // on item frame leave, hide grid || if !isHovering and isHoveringBox == true
+
+  const [firstItem, ...rest] = itemList
+  function handleMouseEnter() {
+    setHovering(true)
+    setHoveringBox(false)
+  }
+  function handleMouseLeave() {
+    if(!isHoveringBox){
+      setHovering(false)
+    }
+  }
+
+  function handleBoxHover() {
+  setHoveringBox(true)
+    console.log("bruh")
+  }
+  
 
   const getRarity = (i) => {
     switch (i.rarity) {
       case "exotic":
-        return "yellow";
+        return "#ffea29";
       case "legendary":
-        return "purple";
+        return "#9e4fff";// purple
       case "rare":
-        return "blue";
+        return "#2b80ff";//blue
       case "uncommon":
         return "green";
       default:
@@ -25,32 +45,50 @@ export default function ItemFrame({ itemList,updaterFunction }) {
     }
   }
   const itemRarity = getRarity(equippedItem)
+
   const frameStyle = {
     border: "2px solid white",
     width: "90px",
     height: "90px",
     marginBottom: "30px",
-    marginLeft: "10px",
+    marginLeft: "5px",
     backgroundColor: itemRarity,
   }
 
-  useEffect( () => {
-    updaterFunction(equippedItem.id,equippedItem.light_level,equippedItem.armor_slot)
-    const newEquippedItems = {...equippedItems, [equippedItem.armor_slot]:{"id": equippedItem.id, "light_level": equippedItem.light_level}}
-    setEquippedItems(newEquippedItems)
-  },[equippedItem])
+  const gridStyle = {
+    backgroundColor: "#706f6f",
+    width: "320px",
+    height: "300px",
+    position: "absolute",
+    marginLeft: "100px",
+    display:"flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+    transition: "width 2s, height 4s"
+  }
+  //renders items in grid
+  const renderItems = (rest.map((gridItem) => <ChildFrame key={gridItem.id} item={gridItem} renderRarity={getRarity} />))
+
+  useEffect(() => {
+    setEquippedItem(itemList[0])
+  }, [itemList])
+
   return (
 
     <div >
-      <div className = "itemContainer">
-        <div style={frameStyle}>
-          <h2 className = "itemWriting">{equippedItem.name}</h2>
-          <h2 className = "itemWriting">{equippedItem.light_level}</h2>
-          <h2 className = "itemWriting">{equippedItem.hasOwnProperty("slot")? equippedItem.slot : equippedItem.armor_slot}</h2>
+      <div className="itemContainer">
+        <div onMouseEnter={handleMouseEnter}  style={frameStyle}>
+          <h2 className="itemWriting">{equippedItem.name}</h2>
+          <h2 className="itemWriting">{equippedItem.light_level}</h2>
+          <h2 className="itemWriting">{equippedItem.hasOwnProperty("slot") ? equippedItem.slot : equippedItem.armor_slot}</h2>
+        </div>
+        {isHovering   && (
+          <div  onMouseLeave = {handleMouseLeave} onMouseEnter = {handleBoxHover}className="gridStyle">
+            {renderItems}
+          </div>
+        )}
       </div>
-        {/*<ItemGrid/>*/}
-      </div>
-      
+     
 
     </div>
 

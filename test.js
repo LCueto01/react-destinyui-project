@@ -1,33 +1,38 @@
 
 
-const item  = {
-    id: 13,
-    light_level: 1406,
-    items: {thing1:"bruh", thing2:"bruh2"}
-  }
-
-const item2 = {
-    thing1: {name: "jeff",age: 22},
-    thing2: {name: "alan",age: 32},
-    thing3: {name: "zeke",age: 42}
+const item = {
+  id: 13,
+  light_level: 1406,
+  items: { thing1: "bruh", thing2: "bruh2" }
 }
 
-  /*
-  Object.keys(item).forEach(key => {
-    if(typeof item[key] === "object"){
-        console.log(Object.keys(item[key]))
-    }else{
-        console.log(key + " " + item[key]) 
-    }
-   
-  })
-  */
- let ageSum = 0;
- Object.keys(item2).forEach(key => {
-   ageSum += item2[key]["age"] 
+const item2 = {
+  thing1: { name: "jeff", age: 22 },
+  thing2: { name: "alan", age: 32 },
+  thing3: { name: "zeke", age: 42 }
+}
 
- })
+const objArr = [{
+  id: 13,
+  light_level: 1406,
+},
+{
+  id: 14,
+  light_level: 1406,
+}]
 
- console.log(ageSum)
+const arrCopy = {...objArr}
+
+const copy = JSON.parse(JSON.stringify(item))
+const otherCopy = { ...item }
+
+const ref = {
+  id: 13,
+  light_level: 1406,
+}
+console.log(arrCopy)
+console.log(objArr.findIndex( i => {
+  return i.id == ref.id
+}))
 
 
