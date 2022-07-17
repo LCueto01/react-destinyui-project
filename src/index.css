@@ -22,7 +22,7 @@ html,body{
 .armorHolder{
     float:right;
     margin-left:60px;
-    position:fixed;
+    position:absolute;
     height: auto;
 }
 
@@ -36,6 +36,7 @@ html,body{
     background-repeat: no-repeat;
     width:700px;
     height: 800px;
+    margin-top: 80px;
 }
 
 .lightContainer{
@@ -128,17 +129,18 @@ html,body{
 
 .itemContainer{
 display: flex;
+margin-right: 40px;
 }
 
 .gridStyle  {
-    background-color:lightGrey;
+    background-color:#706f6f;
     display: flex;
     flex-wrap: wrap;
     width: 290px;
     height: 300px;
-    position: fixed;
-    margin-left: 100px;
     align-content: flex-start;
+    position: absolute;
+    margin-left: 100px;
   }
 
 

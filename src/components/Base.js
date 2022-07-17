@@ -39,7 +39,6 @@ const Base = () => {
             <h1>Light Level</h1>
             <h1>{parseInt(armorLight/9)}</h1>
           </div>
-          <StatHolder />
           <ArmorHolder lightSetter = {setArmorLight}/>
         </div>
       </div>

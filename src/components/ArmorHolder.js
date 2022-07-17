@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import ItemFrame from './ItemFrame'
+import StatHolder from './StatHolder'
 import { headArmorData, chestArmorData, armsArmorData, legsArmorData, bootsArmorData, classItemsData } from './data'
 
 export const equipContext = React.createContext()
@@ -25,9 +26,14 @@ export default function ArmorHolder({ lightSetter }) {
 
 
     function getEquippedItems() {
-        let sumLight = 0;
+        //console.log("this was done")
         const equippedArmour = [headData[0], armsData[0],chestData[0] , legsData[0], bootsData[0], classItemData[0]]
-        equippedArmour.forEach(i => {
+        return equippedArmour
+    }
+
+    function updateEquippedItems(itemsArray){
+        let sumLight = 0;
+        itemsArray.forEach(i => {
             sumLight += i.light_level
             const armorIdCopy = equippedItems
             armorIdCopy[i.armor_slot] = i.id
@@ -76,10 +82,10 @@ export default function ArmorHolder({ lightSetter }) {
     }
 
     useEffect(() => {
-        getEquippedItems()
-        console.log(equippedItems)
+        updateEquippedItems(getEquippedItems())
     },[headData,armsData,chestData,legsData,bootsData,classItemData])
-    return (
+    return (<>
+        <StatHolder armorList = {getEquippedItems()}/>
         <div className="armorHolder">
             <equipContext.Provider value = {equipNewItem}>
                 <ItemFrame itemList={headData} />
@@ -94,5 +100,6 @@ export default function ArmorHolder({ lightSetter }) {
             
             </equipContext.Provider>
         </div>
+        </>
     )
 }

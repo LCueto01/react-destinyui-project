@@ -1,4 +1,4 @@
-export const headArmorData = [{
+export const headArmorData = [ {
     "id": 4,
     "light_level": 1498,
     "name": "Prodder",
@@ -6,25 +6,27 @@ export const headArmorData = [{
     "armor_slot": "head",
     "rarity": "rare",
     "mobility": 22,
+    "intellect": 67,
     "resilience": 19,
     "recovery": 21,
     "strength": 20,
     "discipline": 91
-},
-{
+  },
+  {
     "id": 6,
     "light_level": 1507,
     "name": "Sub-Ex",
     "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
     "armor_slot": "head",
-    "rarity": "legendary",
+    "rarity": "rare",
     "mobility": 62,
+    "intellect": 86,
     "resilience": 54,
     "recovery": 77,
     "strength": 64,
     "discipline": 67
-},
-{
+  },
+  {
     "id": 8,
     "light_level": 1410,
     "name": "Toughjoyfax",
@@ -37,7 +39,8 @@ export const headArmorData = [{
     "recovery": 88,
     "strength": 30,
     "discipline": 60
-  }, {
+  },
+  {
     "id": 11,
     "light_level": 1485,
     "name": "Asoka",
@@ -64,22 +67,9 @@ export const headArmorData = [{
     "recovery": 61,
     "strength": 21,
     "discipline": 34
-  },{
-    "id": 19,
-    "light_level": 1524,
-    "name": "Kanlam",
-    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
-    "armor_slot": "head",
-    "rarity": "exotic",
-    "mobility": 31,
-    "intellect": 38,
-    "resilience": 39,
-    "recovery": 18,
-    "strength": 99,
-    "discipline": 58
   }]
 
-export const chestArmorData = [{
+export const chestArmorData = [ {
     "id": 7,
     "light_level": 1564,
     "name": "Fixflex",
@@ -87,12 +77,13 @@ export const chestArmorData = [{
     "armor_slot": "chest",
     "rarity": "uncommon",
     "mobility": 64,
+    "intellect": 19,
     "resilience": 93,
     "recovery": 33,
     "strength": 19,
     "discipline": 69
-},
-{
+  },
+  {
     "id": 10,
     "light_level": 1450,
     "name": "Tempsoft",
@@ -100,11 +91,40 @@ export const chestArmorData = [{
     "armor_slot": "chest",
     "rarity": "uncommon",
     "mobility": 63,
+    "intellect": 55,
     "resilience": 85,
     "recovery": 92,
     "strength": 91,
     "discipline": 70
-}]
+  },
+  {
+    "id": 17,
+    "light_level": 1516,
+    "name": "Cookley",
+    "description": "Maecenas pulvinar lobortis est.",
+    "armor_slot": "chest",
+    "rarity": "uncommon",
+    "mobility": 16,
+    "intellect": 24,
+    "resilience": 62,
+    "recovery": 78,
+    "strength": 72,
+    "discipline": 51
+  },
+  {
+    "id": 30,
+    "light_level": 1473,
+    "name": "Aerified",
+    "description": "Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "armor_slot": "chest",
+    "rarity": "uncommon",
+    "mobility": 15,
+    "intellect": 77,
+    "resilience": 92,
+    "recovery": 16,
+    "strength": 23,
+    "discipline": 33
+  }]
 
 export const legsArmorData = [{
     "id": 13,
@@ -114,9 +134,9 @@ export const legsArmorData = [{
     "armor_slot": "legs",
     "rarity": "legendary",
     "mobility": 52,
+    "intellect": 93,
     "resilience": 57,
     "recovery": 35,
-    "grenade": 32,
     "strength": 91,
     "discipline": 86
   },
@@ -128,14 +148,56 @@ export const legsArmorData = [{
     "armor_slot": "legs",
     "rarity": "rare",
     "mobility": 29,
+    "intellect": 100,
     "resilience": 49,
     "recovery": 58,
-    "grenade": 87,
     "strength": 69,
     "discipline": 85
+  },
+  {
+    "id": 16,
+    "light_level": 1454,
+    "name": "Bigtax",
+    "description": "Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "armor_slot": "legs",
+    "rarity": "legendary",
+    "mobility": 93,
+    "intellect": 75,
+    "resilience": 29,
+    "recovery": 64,
+    "strength": 59,
+    "discipline": 91
+  },
+  {
+    "id": 20,
+    "light_level": 1560,
+    "name": "Transcof",
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
+    "armor_slot": "legs",
+    "rarity": "rare",
+    "mobility": 46,
+    "intellect": 99,
+    "resilience": 27,
+    "recovery": 56,
+    "strength": 22,
+    "discipline": 71
   }]
 
-export const bootsArmorData = [{
+export const bootsArmorData = [ {
+    "id": 5,
+    "light_level": 1518,
+    "name": "Tin",
+    "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
+    "armor_slot": "boots",
+    "rarity": "exotic",
+    "mobility": 65,
+    "intellect": 99,
+    "resilience": 49,
+    "recovery": 21,
+    "strength": 15,
+    "discipline": 66
+  },
+  {
     "id": 12,
     "light_level": 1412,
     "name": "Ronstring",
@@ -143,12 +205,13 @@ export const bootsArmorData = [{
     "armor_slot": "boots",
     "rarity": "legendary",
     "mobility": 25,
+    "intellect": 74,
     "resilience": 98,
     "recovery": 47,
     "strength": 45,
     "discipline": 37
-},
-{
+  },
+  {
     "id": 14,
     "light_level": 1598,
     "name": "Namfix",
@@ -156,11 +219,27 @@ export const bootsArmorData = [{
     "armor_slot": "boots",
     "rarity": "rare",
     "mobility": 28,
+    "intellect": 24,
     "resilience": 27,
     "recovery": 91,
     "strength": 72,
     "discipline": 58
-}]
+  },
+  {
+    "id": 25,
+    "light_level": 1442,
+    "name": "Job",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
+    "armor_slot": "boots",
+    "rarity": "rare",
+    "mobility": 30,
+    "intellect": 77,
+    "resilience": 77,
+    "recovery": 68,
+    "strength": 69,
+    "discipline": 100
+  }
+ ]
 
 export const armsArmorData = [
     {
@@ -169,14 +248,15 @@ export const armsArmorData = [
         "name": "Sonsing",
         "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "armor_slot": "arms",
-        "rarity": "exotic",
+        "rarity": "rare",
         "mobility": 86,
+        "intellect": 100,
         "resilience": 40,
         "recovery": 28,
         "strength": 61,
         "discipline": 30
-    },
-    {
+      },
+      {
         "id": 2,
         "light_level": 1400,
         "name": "Fintone",
@@ -184,37 +264,68 @@ export const armsArmorData = [
         "armor_slot": "arms",
         "rarity": "exotic",
         "mobility": 97,
+        "intellect": 54,
         "resilience": 26,
         "recovery": 60,
         "strength": 65,
         "discipline": 32
-    }
+      },
+      {
+        "id": 3,
+        "light_level": 1423,
+        "name": "Alphazap",
+        "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+        "armor_slot": "arms",
+        "rarity": "legendary",
+        "mobility": 97,
+        "intellect": 50,
+        "resilience": 26,
+        "recovery": 86,
+        "strength": 57,
+        "discipline": 78
+      },
+      {
+        "id": 9,
+        "light_level": 1599,
+        "name": "Voyatouch",
+        "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
+        "armor_slot": "arms",
+        "rarity": "uncommon",
+        "mobility": 32,
+        "intellect": 41,
+        "resilience": 19,
+        "recovery": 42,
+        "strength": 97,
+        "discipline": 97
+      }
 ]
 
 export const classItemsData = [
-    {   
-        "id":51,
+    {
+        "id": 51,
         "light_level": 1413,
         "name": "Flexidy",
         "description": "Praesent lectus.",
         "armor_slot": "class_item",
         "rarity": "exotic",
         "mobility": 92,
+        "intellect": 73,
         "resilience": 33,
         "recovery": 59,
         "strength": 50,
         "discipline": 32
-    },
-    {
-        "id":52,
+      },
+      {
+        "id": 52,
         "light_level": 1591,
         "name": "Bamity",
         "description": "Donec posuere metus vitae ipsum.",
         "armor_slot": "class_item",
         "rarity": "uncommon",
         "mobility": 96,
+        "intellect": 62,
         "resilience": 93,
         "recovery": 95,
         "strength": 41,
         "discipline": 51
-    }]
+      }]

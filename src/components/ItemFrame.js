@@ -19,7 +19,7 @@ export default function ItemFrame({ itemList }) {
     setHoveringBox(false)
   }
   function handleMouseLeave() {
-    if(!isHoveringBox && !isHovering){
+    if(!isHoveringBox){
       setHovering(false)
     }
   }
@@ -28,6 +28,7 @@ export default function ItemFrame({ itemList }) {
   setHoveringBox(true)
     console.log("bruh")
   }
+  
 
   const getRarity = (i) => {
     switch (i.rarity) {
@@ -76,7 +77,7 @@ export default function ItemFrame({ itemList }) {
 
     <div >
       <div className="itemContainer">
-        <div onMouseEnter={handleMouseEnter} onMouseLeave = {handleMouseLeave} style={frameStyle}>
+        <div onMouseEnter={handleMouseEnter}  style={frameStyle}>
           <h2 className="itemWriting">{equippedItem.name}</h2>
           <h2 className="itemWriting">{equippedItem.light_level}</h2>
           <h2 className="itemWriting">{equippedItem.hasOwnProperty("slot") ? equippedItem.slot : equippedItem.armor_slot}</h2>
@@ -87,7 +88,7 @@ export default function ItemFrame({ itemList }) {
           </div>
         )}
       </div>
-
+     
 
     </div>
 
