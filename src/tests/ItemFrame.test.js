@@ -23,4 +23,13 @@ describe("Testing Item frame", () => {
     const grid = screen.getByTestId("itemGrid");
     expect(grid).toBeInTheDocument();
   });
+
+  it("item grid hides when stop hovering item frame", () => {
+    render(<ItemFrame />);
+    const itemFrame = screen.getByTestId("itemFrame");
+    const grid = screen.queryByTestId("itemGrid");
+    fireEvent.mouseOver(itemFrame);
+    fireEvent.mouseOut(itemFrame);
+    expect(grid).toBeNull();
+  });
 });

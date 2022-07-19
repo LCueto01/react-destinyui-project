@@ -22,6 +22,14 @@ export default function ItemFrame({ itemList }) {
     }
   }
 
+  function setBoxHover() {
+    setHoveringBox(true);
+  }
+
+  function setBoxLeave() {
+    setHoveringBox(false);
+  }
+
   const getRarity = (i) => {
     switch (i.rarity) {
       case "exotic":
@@ -47,17 +55,6 @@ export default function ItemFrame({ itemList }) {
     backgroundColor: itemRarity,
   };
 
-  const gridStyle = {
-    backgroundColor: "#706f6f",
-    width: "320px",
-    height: "300px",
-    position: "absolute",
-    marginLeft: "100px",
-    display: "flex",
-    flexWrap: "wrap",
-    flexDirection: "row",
-    transition: "width 2s, height 4s",
-  };
   //renders items in grid
   const renderItems = rest.map((gridItem) => (
     <ChildFrame key={gridItem.id} item={gridItem} renderRarity={getRarity} />
@@ -73,6 +70,7 @@ export default function ItemFrame({ itemList }) {
         <div
           data-testid="itemFrame"
           onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           style={frameStyle}
         >
           <h2 className="itemWriting">{equippedItem.name}</h2>
@@ -83,10 +81,11 @@ export default function ItemFrame({ itemList }) {
               : equippedItem.armor_slot}
           </h2>
         </div>
-        {isHovering && (
+        {(isHovering || isHoveringBox) && (
           <div
             data-testid="itemGrid"
-            onMouseLeave={handleMouseLeave}
+            onMouseLeave={setBoxLeave}
+            onMouseEnter={setBoxHover}
             className="gridStyle"
           >
             {renderItems}

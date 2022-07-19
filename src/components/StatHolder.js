@@ -49,7 +49,7 @@ export default function StatHolder({ armorList }) {
 
   return (
     <div className="statsCont">
-      <div className="stat">
+      <div data-testid="mobilityHolder" className="stat">
         <p>mobility</p>
         <img
           className="statLogo"
@@ -59,7 +59,7 @@ export default function StatHolder({ armorList }) {
         <h2>{parseInt(charStats.mobility / 6)}</h2>
       </div>
 
-      <div className="stat">
+      <div data-testid="resHolder" className="stat">
         <p>resilience</p>
         <img
           className="statLogo"
@@ -69,7 +69,7 @@ export default function StatHolder({ armorList }) {
         <h2>{parseInt(charStats.resilience / 6)}</h2>
       </div>
 
-      <div className="stat">
+      <div data-testid="recoveryHolder" className="stat">
         <p>recovery</p>
         <img
           className="statLogo"
@@ -79,7 +79,7 @@ export default function StatHolder({ armorList }) {
         <h2>{parseInt(charStats.recovery / 6)}</h2>
       </div>
 
-      <div className="stat">
+      <div data-testid="discHolder" className="stat">
         <p>discipline</p>
         <img
           className="statLogo"
@@ -89,7 +89,7 @@ export default function StatHolder({ armorList }) {
         <h2>{parseInt(charStats.discipline / 6)}</h2>
       </div>
 
-      <div className="stat">
+      <div data-testid="intHolder" className="stat">
         <p>intellect</p>
         <img
           className="statLogo"
@@ -99,7 +99,7 @@ export default function StatHolder({ armorList }) {
         <h2>{parseInt(charStats.intellect / 6)}</h2>
       </div>
 
-      <div className="stat">
+      <div data-testid="strengthHolder" className="stat">
         <p>strength</p>
         <img
           className="statLogo"
