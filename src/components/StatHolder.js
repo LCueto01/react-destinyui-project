@@ -40,7 +40,6 @@ export default function StatHolder({ armorList }) {
       newStats["strength"] += strength;
     });
     setCharStats(newStats);
-    console.log(newStats);
   };
 
   useEffect(() => {
@@ -48,7 +47,7 @@ export default function StatHolder({ armorList }) {
   }, [armorList]);
 
   return (
-    <div className="statsCont">
+    <div data-testid="statsContainer" className="statsCont">
       <div data-testid="mobilityHolder" className="stat">
         <p>mobility</p>
         <img

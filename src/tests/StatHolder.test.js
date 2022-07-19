@@ -8,6 +8,18 @@ import { headArmorData } from "../components/data";
 let data = headArmorData;
 
 describe("Stat holder testing", () => {
+  it("stats container default renders", () => {
+    render(<StatHolder />);
+    const statElement = screen.getByTestId("statsContainer");
+    expect(statElement).toBeInTheDocument();
+  });
+
+  it("stats container renders with items", () => {
+    render(<StatHolder armorList={data} />);
+    const statElement = screen.getByTestId("statsContainer");
+    expect(statElement).toBeInTheDocument();
+  });
+
   it("mobility holder renders", () => {
     render(<StatHolder armorList={data} />);
     const statElement = screen.getByTestId("mobilityHolder");

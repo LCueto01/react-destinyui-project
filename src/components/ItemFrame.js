@@ -73,9 +73,13 @@ export default function ItemFrame({ itemList }) {
           onMouseLeave={handleMouseLeave}
           style={frameStyle}
         >
-          <h2 className="itemWriting">{equippedItem.name}</h2>
-          <h2 className="itemWriting">{equippedItem.light_level}</h2>
-          <h2 className="itemWriting">
+          <h2 data-testid="itemNameLabel" className="itemWriting">
+            {equippedItem.name}
+          </h2>
+          <h2 data-testid="itemLightLabel" className="itemWriting">
+            {equippedItem.light_level}
+          </h2>
+          <h2 data-testid="itemSlotLabel" className="itemWriting">
             {equippedItem.hasOwnProperty("slot")
               ? equippedItem.slot
               : equippedItem.armor_slot}
