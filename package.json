@@ -7,11 +7,17 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "d": "^1.0.1",
+    "easy": "^13.0.45",
+    "easy-peasy": "^5.0.4",
     "jest-transform-stub": "^2.0.0",
+    "peasy": "^0.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "react-test-renderer": "^18.2.0",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
