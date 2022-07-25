@@ -1,21 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { applyMiddleware } from "redux";
-import { StoreProvider, createStore, action } from "easy-peasy";
+import { StoreProvider, createStore} from "easy-peasy";
 import { model } from "./model";
 import logger from "redux-logger";
-import VaultItem from "./VaultItem";
 import { composeWithDevTools } from "redux-devtools-extension";
+import VaultItem from "./VaultItem";
 
-const store = createStore(model, composeWithDevTools(applyMiddleware(logger)));
+
+import { headArmorData } from "./data";
+
+const storeModel = createStore(model)
+
+const store = createStore(storeModel, composeWithDevTools(applyMiddleware(logger)));
 
 const Vault = () => {
   return (
-    <div>
-      <StoreProvider store={store}>
+   
+      <StoreProvider store={storeModel}>
         <h1>hello from vault</h1>
         <VaultItem />
       </StoreProvider>
-    </div>
+  
   );
 };
 

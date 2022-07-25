@@ -36,3 +36,7 @@ console.log(objArr.findIndex( i => {
 }))
 
 
+const randomArr = [1,2,3,4]
+randomArr.shift()
+console.log(randomArr)
+console.log(randomArr.indexOf(2))
