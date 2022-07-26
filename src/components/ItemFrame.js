@@ -53,6 +53,7 @@ export default function ItemFrame({ itemList }) {
     marginBottom: "30px",
     marginLeft: "5px",
     backgroundColor: itemRarity,
+    overflow: "hidden",
   };
 
   //renders items in grid
