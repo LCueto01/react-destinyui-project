@@ -33,7 +33,7 @@ export const ChildFrame = ({ item, renderRarity }) => {
           {item.hasOwnProperty("slot") ? item.slot : item.armor_slot}
         </h2>
       </div>
-      {isHovering && <InfoPanel />}
+      {isHovering && <InfoPanel item={item} />}
     </div>
   );
 };

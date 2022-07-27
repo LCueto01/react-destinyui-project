@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { ChildFrame } from "./ChildFrame";
+import InfoPanel from "./InfoPanel";
 
 export default function ItemFrame({ itemList }) {
   // the first item in the list is the currently equipped item
@@ -20,14 +21,6 @@ export default function ItemFrame({ itemList }) {
     if (!isHoveringBox) {
       setHovering(false);
     }
-  }
-
-  function setBoxHover() {
-    setHoveringBox(true);
-  }
-
-  function setBoxLeave() {
-    setHoveringBox(false);
   }
 
   const getRarity = (i) => {
@@ -89,8 +82,8 @@ export default function ItemFrame({ itemList }) {
         {(isHovering || isHoveringBox) && (
           <div
             data-testid="itemGrid"
-            onMouseLeave={setBoxLeave}
-            onMouseEnter={setBoxHover}
+            onMouseLeave={() => setHoveringBox(false)}
+            onMouseEnter={() => setHoveringBox(true)}
             className="gridStyle"
           >
             {renderItems}

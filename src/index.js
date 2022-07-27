@@ -5,9 +5,8 @@ import Base from "./components/Base";
 import Vault from "./components/Vault";
 import reportWebVitals from "./reportWebVitals";
 
-
 import { applyMiddleware } from "redux";
-import { StoreProvider, createStore} from "easy-peasy";
+import { StoreProvider, createStore } from "easy-peasy";
 import { model } from "./components/model";
 import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -16,12 +15,10 @@ const store = createStore(model, composeWithDevTools(applyMiddleware(logger)));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
- 
-    <StoreProvider store = {store}>
+  <StoreProvider store={store}>
     <Base />
-    <Vault />
-    </StoreProvider>
- 
+    {/*<Vault />*/}
+  </StoreProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -131,7 +131,7 @@ body {
 }
 .vaultStyle {
   height: 600px;
-  background-color: grey;
+  background-color: #3b3d43;
   display: flex;
 }
 
@@ -159,9 +159,59 @@ body {
 }
 
 .infoPanel {
-  min-height: 400px;
-  min-width: 200px;
-  margin-left: 90px;
-  background-color: red;
+  min-height: 300px;
+  min-width: 150px;
+  margin-left: 95px;
+  background-color: #1f1c1c;
   position: absolute;
+}
+
+.infoPanelBanner {
+  min-width: 150px;
+  min-height: 60px;
+  background-color: yellow;
+}
+
+.infoPanelBanner h2 {
+  margin-top: 0px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  color: white;
+  text-shadow: black 0px 0px 3px;
+}
+
+.infoPanelBanner span {
+  color: white;
+  margin-left: 10px;
+  text-shadow: black 0px 0px 3px;
+}
+
+.infoPanelLight {
+  color: white;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.armorStatsPanel {
+  display: inline-block;
+}
+
+.statPair {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+}
+
+#statName {
+  margin-left: 10px;
+  color: white;
+  margin-right: 15px;
+}
+
+.barValue {
+}
+#statValue {
+  margin-left: 20px;
+  color: white;
 }
