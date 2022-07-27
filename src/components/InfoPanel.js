@@ -1,4 +1,5 @@
 import StatPair from "../containers/StatPair";
+import { getRarity } from "./ItemFrame";
 
 const InfoPanel = ({ item }) => {
   const {
@@ -15,11 +16,17 @@ const InfoPanel = ({ item }) => {
     discipline,
   } = item;
 
+  const bannerStyle = {
+    minWidth: "150px",
+    minHeight: "60px",
+    backgroundColor: getRarity(item)
+  }
+
+
   return (
     <div className="infoPanel">
-      <div className="infoPanelBanner">
+      <div id= "infoPanelBanner" style = {bannerStyle}>
         <h2>{name}</h2>
-
         <div>
           <span>{armor_slot}</span>
           <span>{rarity}</span>
@@ -34,6 +41,8 @@ const InfoPanel = ({ item }) => {
         <StatPair statName={"Intellect"} value={intellect} />
         <StatPair statName={"Strength"} value={strength} />
       </div>
+      <button>Dismantle</button>
+      <button>Transfer to Vault</button>
     </div>
   );
 };

@@ -29,10 +29,9 @@ export const ChildFrame = ({ item, renderRarity }) => {
       <div onClick={() => equipFunction(item)} style={frameStyle}>
         <h2 className="itemWriting">{item.name}</h2>
         <h2 className="itemWriting">{item.light_level}</h2>
-        <h2 className="itemWriting">
-          {item.hasOwnProperty("slot") ? item.slot : item.armor_slot}
-        </h2>
+       
       </div>
+      
       {isHovering && <InfoPanel item={item} />}
     </div>
   );

@@ -1,7 +1,7 @@
 const StatPair = ({ statName, value }) => {
   const barStyle = {
-    width: value * 2,
-    height: "20px",
+    width: value * 1.2 ,
+    height: "15px",
     backgroundColor: "white",
     marginTop: "15px",
     float: "left",

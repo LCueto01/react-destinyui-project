@@ -1,7 +1,20 @@
 import React, { useEffect, useState, useContext } from "react";
 import { ChildFrame } from "./ChildFrame";
-import InfoPanel from "./InfoPanel";
 
+export const getRarity = (i) => {
+  switch (i.rarity) {
+    case "exotic":
+      return "#ffea29";
+    case "legendary":
+      return "#9e4fff"; // purple
+    case "rare":
+      return "#2b80ff"; //blue
+    case "uncommon":
+      return "green";
+    default:
+      return "white";
+  }
+};
 export default function ItemFrame({ itemList }) {
   // the first item in the list is the currently equipped item
   const [equippedItem, setEquippedItem] = useState(itemList[0]);
@@ -23,20 +36,7 @@ export default function ItemFrame({ itemList }) {
     }
   }
 
-  const getRarity = (i) => {
-    switch (i.rarity) {
-      case "exotic":
-        return "#ffea29";
-      case "legendary":
-        return "#9e4fff"; // purple
-      case "rare":
-        return "#2b80ff"; //blue
-      case "uncommon":
-        return "green";
-      default:
-        return "white";
-    }
-  };
+ 
   const itemRarity = getRarity(equippedItem);
 
   const frameStyle = {
@@ -73,11 +73,7 @@ export default function ItemFrame({ itemList }) {
           <h2 data-testid="itemLightLabel" className="itemWriting">
             {equippedItem.light_level}
           </h2>
-          <h2 data-testid="itemSlotLabel" className="itemWriting">
-            {equippedItem.hasOwnProperty("slot")
-              ? equippedItem.slot
-              : equippedItem.armor_slot}
-          </h2>
+       
         </div>
         {(isHovering || isHoveringBox) && (
           <div
