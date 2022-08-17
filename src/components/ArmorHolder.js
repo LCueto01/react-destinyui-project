@@ -54,16 +54,22 @@ export default function ArmorHolder({ lightSetter }) {
     lightSetter(sumLight);
   }
 
+  const findItemIndex = (item, itemSource) => {
+    const copy = JSON.parse(JSON.stringify(itemSource));
+    // it only worked if I did this for some reason??
+    const matchingItem = copy.find((i) => {
+      return i.id == item.id;
+    });
+    const foundIndex = copy.indexOf(matchingItem);
+    return foundIndex;
+  };
   const equipNewItem = (item) => {
     //replaces item and updates ids
     const replaceItem = (foundItem, itemSource) => {
       const copy = JSON.parse(JSON.stringify(itemSource));
-      // it only worked if I did this for some reason??
-      const matchingItem = copy.find((i) => {
-        return i.id == foundItem.id;
-      });
-      const foundIndex = copy.indexOf(matchingItem);
-      copy[foundIndex] = copy[0];
+
+      const itemIndex = findItemIndex(foundItem, itemSource);
+      copy[itemIndex] = copy[0];
       copy[0] = foundItem;
 
       const copyArmorIds = { ...equippedItems };
@@ -95,6 +101,24 @@ export default function ArmorHolder({ lightSetter }) {
     }
   };
 
+  const transferToVault = (item) => {
+    switch (item.armor_slot) {
+      case "head":
+        break;
+      case "arms":
+        break;
+      case "chest":
+        break;
+      case "legs":
+        break;
+      case "boots":
+        break;
+      case "class_item":
+        break;
+      default:
+        break;
+    }
+  };
   useEffect(() => {
     updateEquippedItems(getEquippedItems());
   }, [headData, armsData, chestData, legsData, bootsData, classItemData]);

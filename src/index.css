@@ -166,8 +166,6 @@ body {
   position: absolute;
 }
 
-
-
 #infoPanelBanner h2 {
   margin-top: 0px;
   margin-left: 10px;
@@ -214,5 +212,5 @@ body {
 
 .infoPanel button {
   margin-top: 25px;
-  margin-left: 10px
+  margin-left: 10px;
 }

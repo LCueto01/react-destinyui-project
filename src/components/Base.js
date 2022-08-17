@@ -6,7 +6,7 @@ import ArmorHolder from "./ArmorHolder.js";
 import WeaponHolder from "./WeaponHolder.js";
 
 export const baseContext = React.createContext(0);
-
+console.log("adding to pr test");
 const Base = () => {
   const [armorLight, setArmorLight] = useState(0);
   const [weaponLight, setWeaponLight] = useState(0);
